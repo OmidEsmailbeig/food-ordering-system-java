@@ -16,6 +16,4 @@ public class CreateOrderResponse {
     private final UUID orderTrackingId;
     @NotNull
     private final OrderStatus orderStatus;
-    @NotNull
-    private final String message;
 }
