@@ -23,7 +23,7 @@ import java.util.stream.Collectors;
 @Component
 public class OrderDataMapper {
     public Restaurant createOrderCommandToRestaurant(CreateOrderCommand createOrderCommand) {
-        return Restaurant.Builder.builder()
+        return Restaurant.builder()
                 .restaurantId(new RestaurantId(createOrderCommand.getRestaurantId()))
                 .products(createOrderCommand.getItems().stream().map(orderItem ->
                     new Product(new ProductId(orderItem.getProductId())))
@@ -32,7 +32,7 @@ public class OrderDataMapper {
     }
 
     public Order createOrderCommandToOrder(CreateOrderCommand createOrderCommand) {
-        return Order.Builder.builder()
+        return Order.builder()
                 .customerId(new CustomerId(createOrderCommand.getCustomerId()))
                 .restaurantId(new RestaurantId(createOrderCommand.getRestaurantId()))
                 .deliveryAddress(orderAddressToStreetAddress(createOrderCommand.getAddress()))
